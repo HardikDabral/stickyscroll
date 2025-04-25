@@ -8,13 +8,13 @@
     justify-content: space-between;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 4rem 1rem; // Added horizontal padding
+    padding: 0rem 4rem;
   }
 
   .stickyContainer {
     flex: 0 0 30%;
     position: sticky;
-    top: 25vh;
+    top: 5vh;
     transform: translateX(-30%);
     height: fit-content;
     right: 50%;
@@ -27,7 +27,12 @@
     .container {
       padding: 2rem 1rem;
     }
-    
+    .section {
+        min-height: 60vh;
+        display: flex;
+        align-items: flex-start; // Change from center to flex-start
+        position: relative; // Add position relative
+      }
     .stickyContainer {
       transform: translateX(-0%);
       flex: 0 0 40%;
@@ -39,46 +44,31 @@
     }
   }
 
+  .section {
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-start; // Change from center to flex-start
+    position: relative; // Add position relative
+  }
+
   .sectionsContainer {
-    flex: 0 0 55%;
+    flex: 0 0 45%;
   }
 
   .content {
+    padding: 0px 20px;
     h3 {
-      font-size: 1.75rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
 
     ul li {
-      font-size: 1.25rem;
+      font-size: 1rem;
       margin-bottom: 1.5rem;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .stickyRollWrapper {
-    .stickyContainer {
-      transform: translateX(-15%);
-      
-      .colorBox {
-        width: 280px !important;
-        height: 280px !important;
-      }
-    }
-  }
-
-  .content {
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    p, ul li {
-      font-size: 1.1rem;
     }
   }
 }
@@ -90,16 +80,16 @@
 // Remove duplicate stickyContainer class
 
 .section {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
-  align-items: center;
-  padding: 6rem 0;
+  align-items: flex-start; // Change from center to flex-start
+  position: relative; // Add position relative
 }
 
 .content {
   h3 {
+    position: relative; // Add position relative to track h3
     font-size: 2rem;
-    margin-bottom: 3rem;
     color: #333;
     font-weight: 700;
   }
@@ -138,11 +128,25 @@
   width: 450px;
   height: 450px;
   border-radius: 16px;
-  transition: background-color 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
 }
 
-.color0 { background: #4a90e2; }
-.color1 { background: #50c878; }
-.color2 { background: #ff7f50; }
-.color3 { background: #9370db; }
+.image0 { opacity: 1 !important; }
+.image1 { opacity: 1 !important; }
+.image2 { opacity: 1 !important; }
+.image3 { opacity: 1 !important; }
+
+// Remove the old color classes
