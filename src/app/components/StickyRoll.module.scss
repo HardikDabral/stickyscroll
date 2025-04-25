@@ -1,0 +1,87 @@
+.stickyRollWrapper {
+  position: relative; // Change from absolute to relative
+  width: 100%;
+  min-height: 100vh; // Add this to ensure proper height
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 0rem;
+    position: relative;
+  }
+
+  .stickyContainer {
+    flex: 0 0 30%;
+    position: sticky;
+    top: 25vh;
+    transform: translateX(-30%);
+    height: fit-content;
+    right: 50%;
+  }
+}
+
+.sectionsContainer {
+  flex: 0 0 60%;
+}
+
+// Remove duplicate stickyContainer class
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.content {
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+    font-weight: 700;
+  }
+
+  p {
+    color: #666;
+    line-height: 2;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      color: #666;
+      margin-bottom: 2rem;
+      padding-left: 3rem;
+      position: relative;
+      font-size: 1.5rem;
+    //   line-height: 1.6;
+      
+      &:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #4a90e2;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.colorBox {
+  width: 450px;
+  height: 450px;
+  border-radius: 16px;
+  transition: background-color 0.6s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.color0 { background: #4a90e2; }
+.color1 { background: #50c878; }
+.color2 { background: #ff7f50; }
+.color3 { background: #9370db; }
